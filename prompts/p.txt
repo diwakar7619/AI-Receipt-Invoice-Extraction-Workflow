@@ -1,1 +1,53 @@
+OCR PROCESSING LOGIC
+IF file extension = JPG or PNG
+→ Use Google Vision Image OCR API
 
+IF file extension = PDF
+→ Use Google Vision File OCR API
+
+PDF Logic:
+- Extract text from all pages
+- Aggregate OCR text
+- Merge into one clean text block
+- Send combined text into AI extraction pipeline
+INFORMATION EXTRACTION PROMPT
+Extract structured financial information from the OCR text.
+
+Return ONLY valid JSON.
+
+Required fields:
+- date
+- receiptId
+- vendor
+- description
+- amount
+- currency
+- category
+- expenseType
+- paymentMethod
+- gstHstPaid
+- pstPaid
+- totalTax
+
+Extraction Rules:
+- Convert dates into YYYY-MM-DD format
+- Extract final paid amount only
+- Return all tax values as numbers
+- Return 0 if taxes are not present
+- Categorize expenses intelligently
+- Detect payment methods if available
+- Do not hallucinate missing values
+- Extract receipt or invoice numbers accurately
+WHY THIS PROMPT IS IMPORTANT
+The OCR output is messy and unstructured.
+
+The AI extraction prompt converts raw OCR text into:
+- Clean structured data
+- Financial records
+- Categorized expenses
+- Spreadsheet-ready information
+
+Without this prompt:
+- OCR text would remain unusable
+- Accounting automation would fail
+- Data consistency would break
