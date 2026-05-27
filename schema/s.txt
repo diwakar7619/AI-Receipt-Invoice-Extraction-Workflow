@@ -1,1 +1,29 @@
+STRUCTURED JSON EXTRACTION SCHEMA
+{
+  "date": "YYYY-MM-DD",
+  "receiptId": "string",
+  "vendor": "string",
+  "description": "string",
+  "amount": 0,
+  "currency": "INR/USD/EUR",
+  "category": "Food/Travel/Software/etc",
+  "expenseType": "string",
+  "paymentMethod": "UPI/Card/Cash/etc",
+  "gstHstPaid": 0,
+  "pstPaid": 0,
+  "totalTax": 0
+}
 
+
+WHY THIS SCHEMA IS IMPORTANT
+The schema forces the AI model to return consistent structured output.
+
+Benefits:
+- Prevents malformed AI responses
+- Maintains spreadsheet consistency
+- Standardizes accounting records
+- Enables scalable automation
+- Makes downstream processing reliable
+
+This schema acts as the data contract between OCR, AI extraction, and Google Sheets.
+GOOGLE SHEETS STORAGE STRUCTURE
